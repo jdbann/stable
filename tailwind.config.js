@@ -34,10 +34,7 @@ module.exports = {
         12: "#ecedee",
       },
     },
-    container: {
-      center: true,
-      padding: "1.5rem",
-    },
+
     fontFamily: {
       sans: "var(--font-inter)",
       serif: "var(--font-fraunces)",
@@ -86,9 +83,16 @@ module.exports = {
         },
       ],
     },
+
+    container: {
+      center: true,
+      padding: "1.5rem",
+    },
+
     screens: {
       lg: "1024px",
     },
+
     spacing: {
       0: 0,
       1: "0.25rem",
@@ -98,6 +102,16 @@ module.exports = {
       8: "2rem",
       12: "3rem",
     },
+
+    height: undefined,
+    maxHeight: undefined,
+    minHeight: undefined,
+
+    width: undefined,
+    maxWidth: ({ theme, breakpoints }) => ({
+      ...breakpoints(theme("screens")),
+    }),
+    minWidth: undefined,
   },
   plugins: [
     plugin(function ({ matchUtilities }) {

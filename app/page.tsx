@@ -13,7 +13,7 @@ export default function Page() {
 
       {/* <div className="area-[sidebar]">Sidebar</div> */}
 
-      <div className="flex max-w-prose flex-col gap-4 area-[content]">
+      <div className="max-w-prose flex flex-col gap-4 area-[content]">
         <p className="text-lg text-slate-12">
           Hey, hi! My name is John and I&apos;m a web developer. I make things,
           and I try to be considerate when making them. This website is where I
