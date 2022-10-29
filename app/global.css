@@ -12,8 +12,10 @@
   }
 
   a {
-    @apply relative text-indigo-11 focus:outline-none;
-    @apply before:absolute before:inset-y-0 before:-inset-x-1 before:rounded before:outline-indigo-7 focus:before:ring;
+    @apply relative text-indigo-11 focus:outline-none aria-[current=page]:text-indigo-12;
+
+    /* Use a before element to apply a ring. This allows adding padding to the ring without changing element dimenstions by applying a negative inset. */
+    @apply before:absolute before:inset-0 before:-inset-x-1 before:rounded before:outline-indigo-7 focus:before:ring;
   }
 }
 

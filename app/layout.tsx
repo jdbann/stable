@@ -1,4 +1,5 @@
 import Link from "next/link";
+import * as Nav from "./Nav";
 import { fraunces, inter } from "../lib/fonts";
 import "./global.css";
 
@@ -17,15 +18,9 @@ export default function RootLayout({
         <div className="flex flex-col gap-12">
           <div className="container py-4 text-sm">
             <header>
-              <nav>
-                <ul className="flex flex-row gap-4">
-                  <li>
-                    <h2>
-                      <Link href="/">emailaddress.horse</Link>
-                    </h2>
-                  </li>
-                </ul>
-              </nav>
+              <Nav.Root className="flex flex-row gap-4" aria-label="Main">
+                <Nav.Link href="/">emailaddress.horse</Nav.Link>
+              </Nav.Root>
             </header>
           </div>
 
@@ -33,15 +28,14 @@ export default function RootLayout({
 
           <div className="container py-4 text-sm">
             <footer>
-              <nav>
-                <ul className="flex flex-row justify-end gap-4">
-                  <li>
-                    <Link href="https://twitter.com/jdbannister">
-                      @jdbannister
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
+              <Nav.Root
+                className="flex flex-row justify-end gap-4"
+                aria-label="Social links"
+              >
+                <Nav.Link href="https://twitter.com/jdbannister">
+                  @jdbannister
+                </Nav.Link>
+              </Nav.Root>
             </footer>
           </div>
         </div>
