@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+  }
+
+  body {
+    @apply bg-indigo-1 font-sans text-base text-slate-11;
+  }
+
+  a {
+    @apply relative text-indigo-11 focus:outline-none;
+    @apply before:absolute before:inset-y-0 before:-inset-x-1 before:rounded before:outline-indigo-7 focus:before:ring;
+  }
+}
+
+@layer utilities {
+  .grid-template-sidebar {
+    grid-template-areas:
+      "header header"
+      "content sidebar";
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .grid-template-sidebar-inline {
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "content";
+    grid-template-columns: 1fr;
+  }
+}
