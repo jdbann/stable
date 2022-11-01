@@ -1,40 +1,10 @@
 const plugin = require("tailwindcss/plugin");
+const colorSchemePlugin = require("./lib/tailwind/colorSchemePlugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    colors: {
-      indigo: {
-        1: "#131620",
-        2: "#15192d",
-        3: "#192140",
-        4: "#1c274f",
-        5: "#1f2c5c",
-        6: "#22346e",
-        7: "#273e89",
-        8: "#2f4eb2",
-        9: "#3e63dd",
-        10: "#5373e7",
-        11: "#849dff",
-        12: "#eef1fd",
-      },
-      slate: {
-        1: "#151718",
-        2: "#1a1d1e",
-        3: "#202425",
-        4: "#26292b",
-        5: "#2b2f31",
-        6: "#313538",
-        7: "#3a3f42",
-        8: "#4c5155",
-        9: "#697177",
-        10: "#787f85",
-        11: "#9ba1a6",
-        12: "#ecedee",
-      },
-    },
-
     fontFamily: {
       sans: "var(--font-inter)",
       serif: "var(--font-fraunces)",
@@ -114,6 +84,7 @@ module.exports = {
     minWidth: undefined,
   },
   plugins: [
+    colorSchemePlugin({ scales: ["indigo", "slate"] }),
     plugin(function ({ matchUtilities }) {
       matchUtilities(
         {
