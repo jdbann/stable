@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier . -w",
-    "generateTokens": "node lib/generateFigmaTokens.js --silent | prettier --stdin-filepath figmaTokens.json > figmaTokens.json"
+    "generate": "node lib/generate/tokens.js --silent | prettier --stdin-filepath tokens.json > tokens.json"
   },
   "dependencies": {
     "@next/font": "13.0.0",
