@@ -1,0 +1,29 @@
+name: Generate files
+on: [push]
+jobs:
+  generate:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Generate files
+        run: yarn generate
+
+      - name: Check no changes after generating files
+        run: echo $(git --no-pager diff) | grep -e "^\$"
+
+      - name: Output diff
+        run: |
+          echo "\`\`\`diff" >> $GITHUB_STEP_SUMMARY
+          git --no-pager diff --no-color >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        if: ${{ failure() }}
