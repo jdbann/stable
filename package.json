@@ -8,7 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier . -w",
-    "generate": "node lib/generate/tokens.js --silent | prettier --stdin-filepath tokens.json > tokens.json"
+    "generate": "node lib/generate/tokens.js --silent | prettier --stdin-filepath tokens.json > tokens.json",
+    "cypress": "cypress open --e2e",
+    "cypress:headless": "cypress run --e2e",
+    "e2e": "start-server-and-test dev 3000 cypress",
+    "e2e:headless": "start-server-and-test dev 3000 cypress:headless"
   },
   "dependencies": {
     "@next/font": "13.0.0",
@@ -23,11 +27,13 @@
     "@types/react": "18.0.23",
     "@types/react-dom": "18.0.7",
     "autoprefixer": "^10.4.12",
+    "cypress": "^10.11.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
+    "start-server-and-test": "^1.14.0",
     "tailwindcss": "^3.2.1",
     "typescript": "4.8.4"
   }
