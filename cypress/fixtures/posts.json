@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Designing as a developer",
+    "slug": "designing-as-a-developer",
+    "created_at": "5 September 2022",
+    "summary": "Design always felt like a vague and unknowable discipline to me. That it sat in the world of ambiguous creation and required a certain innate confidence that 'what I have designed is what is required'. That's not how I work as a developer, in a land of unit tests and exception tracking."
+  },
+  {
+    "title": "Learning to love Tailwind",
+    "slug": "learning-to-love-tailwind",
+    "created_at": "4 September 2022",
+    "summary": "I wasn't always a fan, but over the last year I've become increasingly won over by a jumble of classes. But the sprinkling of extra magic you can get from really tearing into the config file makes for a very elegant interface for building styles without leaving your markup."
+  }
+]
