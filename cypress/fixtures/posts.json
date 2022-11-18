@@ -3,12 +3,14 @@
     "title": "Designing as a developer",
     "slug": "designing-as-a-developer",
     "created_at": "5 September 2022",
-    "summary": "Design always felt like a vague and unknowable discipline to me. That it sat in the world of ambiguous creation and required a certain innate confidence that 'what I have designed is what is required'. That's not how I work as a developer, in a land of unit tests and exception tracking."
+    "summary": "Design always felt like a vague and unknowable discipline to me. That it sat in the world of ambiguous creation and required a certain innate confidence that 'what I have designed is what is required'. That's not how I work as a developer, in a land of unit tests and exception tracking.",
+    "body": "Design always felt like a vague and unknowable discipline to me. That it sat in the world of ambiguous creation and required a certain innate confidence that 'what I have designed is what is required'. That's not how I work as a developer, in a land of unit tests and exception tracking.\n\nWhat I'm missing is some way of verifying that my work is doing what it is meant to do. I thought that in the world of design this was some innate aesthetic judgement, and that it took confidence and experience to 'just know' that the design was correct."
   },
   {
     "title": "Learning to love Tailwind",
     "slug": "learning-to-love-tailwind",
     "created_at": "4 September 2022",
-    "summary": "I wasn't always a fan, but over the last year I've become increasingly won over by a jumble of classes. But the sprinkling of extra magic you can get from really tearing into the config file makes for a very elegant interface for building styles without leaving your markup."
+    "summary": "I wasn't always a fan, but over the last year I've become increasingly won over by a jumble of classes. But the sprinkling of extra magic you can get from really tearing into the config file makes for a very elegant interface for building styles without leaving your markup.",
+    "body": "I wasn't always a fan, but over the last year I've become increasingly won over by a jumble of classes. But the sprinkling of extra magic you can get from really tearing into the config file makes for a very elegant interface for building styles without leaving your markup."
   }
 ]

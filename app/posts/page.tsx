@@ -1,7 +1,7 @@
+import Link from "next/link";
 import React from "react";
+import { FormattedDate } from "../../components/FormattedDate";
 import { Andrew } from "../../lib/andrew";
-
-const dateFormat = new Intl.DateTimeFormat("en-GB", { dateStyle: "long" });
 
 async function getPosts() {
   const res = await Andrew.content.GetPosts();
@@ -30,12 +30,15 @@ export default async function Page() {
               <li key={post.slug}>
                 <article className="flex flex-col gap-4" data-slug={post.slug}>
                   <header className="flex flex-col gap-2">
-                    <time className="text-sm">
-                      {dateFormat.format(new Date(post.created_at))}
-                    </time>
-                    <h2 className="font-serif text-h-md text-slate-12">
-                      {post.title}
-                    </h2>
+                    <FormattedDate
+                      className="text-sm"
+                      date={new Date(post.created_at)}
+                    />
+                    <Link href={`/posts/${post.slug}`}>
+                      <h2 className="font-serif text-h-md text-slate-12">
+                        {post.title}
+                      </h2>
+                    </Link>
                   </header>
                   <p>{post.summary}</p>
                 </article>
