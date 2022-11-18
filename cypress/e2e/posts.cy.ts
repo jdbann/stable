@@ -14,4 +14,16 @@ describe("posts page", () => {
       });
     });
   });
+
+  it("links to individual posts", () => {
+    cy.visit("/posts");
+
+    const post = posts[0];
+
+    cy.get(`article[data-slug='${post.slug}'] a`).click();
+
+    cy.contains("h1", post.title);
+    cy.get("time").contains(post.created_at);
+    cy.contains("p", post.body.replace(/\s+/g, " "));
+  });
 });
