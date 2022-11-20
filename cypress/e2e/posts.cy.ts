@@ -24,6 +24,8 @@ describe("posts page", () => {
 
     cy.contains("h1", post.title);
     cy.get("time").contains(post.created_at);
-    cy.contains("p", post.body.replace(/\s+/g, " "));
+    post.body.split("\n\n").forEach((paragraph) => {
+      cy.contains("p", paragraph.replace(/\s+/g, " "));
+    });
   });
 });

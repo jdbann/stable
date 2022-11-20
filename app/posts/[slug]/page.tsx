@@ -1,4 +1,5 @@
 import { FormattedDate } from "../../../components/FormattedDate";
+import { Markdown } from "../../../components/Markdown";
 import { Andrew } from "../../../lib/andrew";
 
 type PathParams = {
@@ -46,7 +47,7 @@ export default async function Page({
       </div>
 
       <div className="max-w-prose flex flex-col gap-4 area-[content]">
-        <p>{post.body}</p>
+        <Markdown source={post.body} />
       </div>
     </div>
   );
