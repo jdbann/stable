@@ -1,13 +1,13 @@
 name: Run tests
 on: [push]
 jobs:
-  test-e2e:
+  test:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Cypress run
+      - name: Run e2e tests
         uses: cypress-io/github-action@v4
         with:
           build: yarn build
@@ -17,5 +17,15 @@ jobs:
         env:
           ANDREW_API_TOKEN: ${{ secrets.ANDREW_API_TOKEN }}
           ANDREW_ENVIRONMENT: staging
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run component tests
+        uses: cypress-io/github-action@v4
+        with:
+          component: true
+          install: false
+          record: true
+        env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

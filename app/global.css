@@ -17,6 +17,10 @@
     /* Use a before element to apply a ring. This allows adding padding to the ring without changing element dimenstions by applying a negative inset. */
     @apply before:absolute before:inset-0 before:-inset-x-1 before:rounded before:outline-indigo-7 focus:before:ring;
   }
+
+  .lead {
+    @apply text-lg text-slate-12;
+  }
 }
 
 @layer utilities {

@@ -10,17 +10,20 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "generate": "node lib/generate/tokens.js --silent | prettier --stdin-filepath tokens.json > tokens.json",
-    "cypress": "cypress open --e2e",
-    "cypress:headless": "cypress run --e2e",
-    "e2e": "start-server-and-test dev 3000 cypress",
-    "e2e:headless": "start-server-and-test dev 3000 cypress:headless"
+    "cypress": "cypress open",
+    "test": "start-server-and-test dev 3000 'cypress run'",
+    "test:e2e": "start-server-and-test dev 3000 'cypress run --e2e'",
+    "test:component": "cypress run --component"
   },
   "dependencies": {
     "@next/font": "^13.0.0",
     "@radix-ui/react-navigation-menu": "^1.1.1",
+    "hast-util-classnames": "^2.0.0",
     "next": "^13.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-remark": "^2.1.0",
+    "unist-util-visit": "^4.1.1"
   },
   "devDependencies": {
     "@radix-ui/colors": "^0.1.8",
@@ -28,7 +31,7 @@
     "@types/react": "18.0.23",
     "@types/react-dom": "18.0.7",
     "autoprefixer": "^10.4.12",
-    "cypress": "^10.11.0",
+    "cypress": "^11.1.0",
     "eslint": "8.26.0",
     "eslint-config-next": "^13.0.0",
     "postcss": "^8.4.18",
